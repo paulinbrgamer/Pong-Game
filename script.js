@@ -50,7 +50,7 @@ function update(){
     }
     
     //colisao da bola p2
-    if(bol.x+bol.w  >= (p2.x) && bol.y<= p2.y+p2.h+20&& bol.y>= p2.y-20){
+    if( bol.x<= p2.x+p2.w&& bol.x>= p2.x && bol.y<= p2.y+p2.h+20&& bol.y>= p2.y-20){
         bol.dx = -1
         bol.x += bol.a*bol.dx
         bol.beats++
@@ -61,7 +61,7 @@ function update(){
         }
     }
     //colisao da bola p1
-    if(bol.x+bol.w <= (p1.x+p1.w)&& bol.y<= p1.y+p1.h+20&& bol.y>= p1.y-20){
+    if(bol.x<= p1.x+p1.w&& bol.x>= p1.x&& bol.y<= p1.y+p1.h+20&& bol.y>= p1.y-20){
         //mudar direção x
         bol.dx = 1
         bol.x += bol.a*bol.dx
