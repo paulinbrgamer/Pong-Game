@@ -9,6 +9,8 @@
     <title>Document</title>
     <style>
         *{
+            outline: none;
+            letter-spacing: 3px;
             color: white;
             padding: 0px;
             margin: 0px;
@@ -27,10 +29,12 @@
             background-color: black;
         }
         .title{
+            font-weight: 600;
             font-size: 48pt;
             color: white;
         }
         #display{
+            padding: 5px;
             background-color: black;
             border: 3px dashed white;
         }
@@ -41,10 +45,31 @@
             display: flex;
             justify-content: space-between;
         }
-       
+        #start-button{
+            font-size: 24pt;
+            font-weight: 600;
+            background-color: black;
+            border: 2px solid;
+            width: 240px;
+            height: 70px;
+            position: absolute;
+        }
+       button:hover{
+        cursor: pointer;
+        color: yellow;
+       }
+       #Reset{
+        display: none;
+        font-size: 14pt;
+        font-weight: 600;
+        background-color: black;
+        border: 2px solid;
+        padding: 10px;
+       }
     </style>
 </head>
 <body>
+    <button onclick="init()" id="start-button">START</button>
     <h1 class="title">PONG</h1>
     <div>
         <div class="scores" >
@@ -52,8 +77,9 @@
             <h2 style="color: yellow;">P2</h2>
         </div>
         <div class="scores" style="margin-bottom: 10px;">
-            <h2>0</h2>
-            <h2>0</h2>
+            <h2 id="score1">0</h2>
+            <button onclick="reset()" id ='Reset'>RESETAR</button>
+            <h2 id="score2">0</h2>
         </div>
         <canvas id="display" width="800" height="450"></canvas>
     </div>
