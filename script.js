@@ -45,7 +45,7 @@ function update(){
     if (keys['w'] && p1.y >=10  ||keys['W'] && p1.y >=10 ){
         p1.y -= p1.a
     }
-    if (keys['s']&& p1.y+p1.h <=canvas.height-10 ||keys['S'] && p1.y+p1.h <=canvas.heigh-10){
+    if (keys['s']&& p1.y+p1.h <=canvas.height-10 ||keys['S'] && p1.y+p1.h <=canvas.height-10){
         p1.y += p1.a
     }
     
