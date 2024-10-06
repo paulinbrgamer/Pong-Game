@@ -6,13 +6,13 @@ var p1 = {
     y:0,
     w:50,
     h:50,
-    color:'#0000'
+    color:'#0ff'
 }
 var p2 = {
-    x:0,
-    y:0,
+    x:70,
+    y:70,
     w:50,
     h:50,
-    color:'#0000'
+    color:'#ff00'
 }
 drawnRec(p1,ctx)

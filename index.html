@@ -3,19 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
+        *{
+            color: white;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: "Jersey 15", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
         body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 98%;
+            height: 97vh;
             background-color: black;
+        }
+        .title{
+            font-size: 48pt;
+            color: white;
         }
         #display{
             background-color: black;
-            border: 10px solid white;
+            border: 3px dashed white;
         }
+        .scores{
+            margin-left: 10px;
+            font-size: 14pt;
+            width:788px;
+            display: flex;
+            justify-content: space-between;
+        }
+       
     </style>
 </head>
 <body>
-    <canvas id="display" width="800" height="450"></canvas>
+    <h1 class="title">PONG</h1>
+    <div>
+        <div class="scores" >
+            <h2 style="color: yellow;">P1</h2>
+            <h2 style="color: yellow;">P2</h2>
+        </div>
+        <div class="scores" style="margin-bottom: 10px;">
+            <h2>0</h2>
+            <h2>0</h2>
+        </div>
+        <canvas id="display" width="800" height="450"></canvas>
+    </div>
+    
     <script type="module" src="script.js"></script>
 </body>
 </html>
