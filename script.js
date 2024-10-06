@@ -16,7 +16,7 @@ var p1 = {
 }
 var p2 = {
     x:canvas.width-40,
-    y:canvas.height-370,
+    y:canvas.height-260,
     w:20,
     h:60,
     a:10,
@@ -24,18 +24,18 @@ var p2 = {
     score: 0
 }
 var bol = {
-    x:70,
-    y:canvas.height-210,
+    x:400,
+    y:canvas.height-200,
     w:20,
     h:20,
-    a:10,
+    a:0,
     dx:1,
     dy:1,
     color:'yellow',
     beats: 0
 }
 function update(){
-    
+
     if (keys['ArrowUp'] && p2.y >=10){
         p2.y -= p2.a
     }
@@ -134,7 +134,11 @@ window.addEventListener('keydown',(event)=>{
 function init(){
     document.getElementById('Reset').style.display = 'block'
     document.getElementById('start-button').style.display = 'none'
+    setTimeout(()=>{
+        bol.a = 10
+    },2000)
     draw()
+    
 }
 function reset(){
     p1.score = 0 
