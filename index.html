@@ -40,7 +40,7 @@
         }
         .scores{
             margin-left: 10px;
-            font-size: 14pt;
+            font-size: 18pt;
             width:788px;
             display: flex;
             justify-content: space-between;
@@ -66,6 +66,29 @@
         border: 2px solid;
         padding: 10px;
        }
+       .special{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+       }
+       .especial-p1{
+        width: 105px;
+        height: 50px;
+        border: 3px solid rgb(119, 111, 3);
+       }
+       #bar1{
+        box-sizing: content-box;
+        background-color: rgb(251, 255, 26);
+        width: 0px;
+        height: 44px;
+       }
+       #bar2{
+        box-sizing: content-box;
+        background-color: rgb(251, 255, 26);
+        width: 0px;
+        height: 44px;
+       }
     </style>
 </head>
 <body>
@@ -73,10 +96,20 @@
     <h1 class="title">PONG</h1>
     <div>
         <div class="scores" >
-            <h2 style="color: yellow;">P1</h2>
-            <h2 style="color: yellow;">P2</h2>
+            <div class="special">
+                <h2 style="color: yellow;margin-right: 5px;">P1</h2>
+                <div class="especial-p1">
+                    <div id="bar1"></div>
+                </div>
+            </div>
+            <div class="special">
+                <h2 style="color: yellow;margin-right: 5px;">P1</h2>
+                <div class="especial-p1">
+                    <div id="bar2"></div>
+                </div>
+            </div>
         </div>
-        <div class="scores" style="margin-bottom: 10px;">
+        <div class="scores" style="margin-bottom: 8px; margin-top: 8px;">
             <h2 id="score1">0</h2>
             <button onclick="reset()" id ='Reset'>RESETAR</button>
             <h2 id="score2">0</h2>
