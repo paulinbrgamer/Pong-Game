@@ -11,7 +11,7 @@ var p1 = {
     y:canvas.height-260,
     w:20,
     h:60,
-    a:10,
+    a:6,
     color:'white',
     score: 0,
     beats: 0
@@ -21,14 +21,14 @@ var p2 = {
     y:canvas.height-260,
     w:20,
     h:60,
-    a:10,
+    a:6,
     color:'white',
     score: 0,
     beats: 0
 }
 var bol = {
     x:400,
-    y:canvas.height-200,
+    y:150,
     w:20,
     h:20,
     a:0,
@@ -39,7 +39,7 @@ var bol = {
 }
 var tail = {
     x:420,
-    y:canvas.height-220,
+    y:150,
     w:20,
     h:20,
     color:'rgba(255,255,0,0.9)',
@@ -93,27 +93,28 @@ function update(){
     }
     
     if(bol.x>canvas.width){
-        setTimeout(()=>{
         bol.x = 400
         bol.y = 150
-        
-        p2.beats = 0
-        },1000)
         p1.score++
+        p2.beats = 0
+        velocity = 0
+        setTimeout(()=>{
+            velocity = 10
+        },2000)
     }
     if(bol.x< 0){
-        setTimeout(()=>{
         bol.x = 400
         bol.y = 150
-        
-        p1.beats = 0
-
-        },1000)
         p2.score++
+        p1.beats = 0
+        velocity= 0 
+        setTimeout(()=>{
+            velocity= 10 
+        },2000)
     }
-    setTimeout(()=>{
-        bol.a = velocity
-    },2000)
+    
+    bol.a = velocity
+    
     tail.x = bol.x
     tail.y = bol.y
     bol.x += bol.a*bol.dx
@@ -150,6 +151,10 @@ function draw(){
 function init(){
     document.getElementById('Reset').style.display = 'block'
     document.getElementById('start-button').style.display = 'none'
+    velocity = 0
+        setTimeout(()=>{
+            velocity = 10
+        },2000)
     draw()
     
 }
@@ -159,7 +164,7 @@ function reset(){
         y:canvas.height-260,
         w:20,
         h:60,
-        a:10,
+        a:6,
         color:'white',
         score: 0,
         beats: 0
@@ -169,14 +174,14 @@ function reset(){
         y:canvas.height-260,
         w:20,
         h:60,
-        a:10,
+        a:6,
         color:'white',
         score: 0,
         beats: 0
     }
      bol = {
         x:400,
-        y:canvas.height-200,
+        y:150,
         w:20,
         h:20,
         a:0,
