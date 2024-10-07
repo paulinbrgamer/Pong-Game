@@ -28,6 +28,18 @@
             height: 97vh;
             background-color: black;
         }
+        #controls{
+            display: none;
+        }
+        #help{
+            align-self: flex-end;
+            font-size: 30pt;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 3px solid ;
+        }
         .title{
             font-weight: 600;
             font-size: 48pt;
@@ -89,9 +101,17 @@
         width: 0px;
         height: 44px;
        }
+       .show{
+        display: flex;
+       }
     </style>
 </head>
 <body>
+    <button onclick="c()" id="help">?</button>
+    <div id="controls">
+        <div style="font-size: 14pt;text-align: center;border: 1px solid gray; padding: 10px;">Controles Player 1 <br> W <br> S <br> especial: D</div>
+        <div style="font-size: 14pt;text-align: center; border: 1px solid gray;padding: 10px;">Controles Player 2 <br> ↑ <br> ↓ <br> especial: ←</div>
+    </div>
     <button onclick="init()" id="start-button">START</button>
     <h1 class="title">PONG</h1>
     <div>

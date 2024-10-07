@@ -3,6 +3,7 @@ var canvas = document.getElementById('display')
 var ctx = canvas.getContext('2d')
 window.init = init
 window.reset =reset
+window.c = c
 var keys = {}
 
 var p1 = {
@@ -205,6 +206,16 @@ function reset(){
     setTimeout(()=>{
         bol.a = 10
     },1000)
+}
+function c(){
+    var div = document.getElementById('controls')
+    var c = getComputedStyle(div)
+    if (c.display == 'none'){
+        div.style.display = 'flex'
+    }
+    else{
+        div.style.display = 'none'
+    }
 }
 //capiturar inputes
 window.addEventListener('keyup',(event)=>{
