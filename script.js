@@ -59,7 +59,7 @@ function update(){
     }
     
     //colisao da bola p2
-    if( bol.x<= p2.x+p2.w&& bol.x>= p2.x-10 && bol.y<= p2.y+p2.h+10&& bol.y>= p2.y-10){
+    if( bol.x<= p2.x+p2.w&& bol.x>= p2.x && bol.y<= p2.y+p2.h-10&& bol.y>= p2.y-10){
         bol.dx = -1
         bol.x += bol.a*bol.dx
         p2.beats++
@@ -73,10 +73,9 @@ function update(){
             p1.a = 10
             p2.a = 10 
         }
-        console.log('p1 '+p1.beats)
     }
     //colisao da bola p1
-    if(bol.x<= p1.x+p1.w+10&& bol.x>= p1.x&& bol.y<= p1.y+p1.h+10&& bol.y>= p1.y-10){
+    if(bol.x<= p1.x+p1.w&& bol.x>= p1.x&& bol.y<= p1.y+p1.h+10&& bol.y>= p1.y+10){
         //mudar direção x
         bol.dx = 1
         bol.x += bol.a*bol.dx
@@ -86,12 +85,11 @@ function update(){
             p1.a = 20
             p2.a = 20
             p1.beats = 0
-        }else if (p1.beats>=3){
+        }else {
             bol.a = 10
             p1.a = 10
             p2.a = 10 
         }
-        console.log('p1 '+p1.beats)
     }
     //colisao paredes y
     if (bol.y >=canvas.height-20){
