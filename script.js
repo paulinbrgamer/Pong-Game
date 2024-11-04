@@ -8,7 +8,7 @@ window.c = c
 var keys = {}
 
 var p1 = {
-    x:40,
+    x:0,
     y:canvas.height-260,
     w:20,
     h:60,
@@ -18,7 +18,7 @@ var p1 = {
     beats: 0
 }
 var p2 = {
-    x:canvas.width-40,
+    x:canvas.width-20,
     y:canvas.height-260,
     w:20,
     h:60,
@@ -161,7 +161,7 @@ function init(){
 }
 function reset(){
     p1 = {
-        x:40,
+        x:0,
         y:canvas.height-260,
         w:20,
         h:60,
@@ -171,7 +171,7 @@ function reset(){
         beats: 0
     }
      p2 = {
-        x:canvas.width-40,
+        x:canvas.width-20,
         y:canvas.height-260,
         w:20,
         h:60,
