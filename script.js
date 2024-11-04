@@ -65,7 +65,7 @@ function update(){
         bol.dx = -1
         bol.x += bol.a*bol.dx
         p2.beats++
-        if(keys['ArrowLeft'] && p2.beats>=3){
+        if(keys['ArrowLeft'] && p2.beats>3){
             p2.beats = 0
             velocity *=3
             
@@ -78,7 +78,7 @@ function update(){
         bol.dx = 1
         bol.x += bol.a*bol.dx
         p1.beats++
-        if(keys['d'] && p1.beats>=3){
+        if(keys['d'] && p1.beats>3){
             p1.beats = 0
             velocity *=3
             
@@ -101,7 +101,7 @@ function update(){
         velocity = 0
         setTimeout(()=>{
             velocity = 10
-        },2000)
+        },3000)
     }
     if(bol.x< 0){
         bol.x = 400
@@ -111,7 +111,7 @@ function update(){
         velocity= 0 
         setTimeout(()=>{
             velocity= 10 
-        },2000)
+        },3000)
     }
     
     bol.a = velocity
@@ -155,11 +155,15 @@ function init(){
     velocity = 0
         setTimeout(()=>{
             velocity = 10
-        },2000)
+        },3000)
     draw()
     
 }
 function reset(){
+    velocity = 0
+    setTimeout(()=>{
+        velocity = 10
+    },3000)
     p1 = {
         x:0,
         y:canvas.height-260,
@@ -170,7 +174,7 @@ function reset(){
         score: 0,
         beats: 0
     }
-     p2 = {
+    p2 = {
         x:canvas.width-20,
         y:canvas.height-260,
         w:20,
@@ -180,7 +184,7 @@ function reset(){
         score: 0,
         beats: 0
     }
-     bol = {
+    bol = {
         x:400,
         y:150,
         w:20,
@@ -191,13 +195,14 @@ function reset(){
         color:'yellow',
         
     }
-     tail = {
+    tail = {
         x:420,
         y:canvas.height-220,
         w:20,
         h:20,
         color:'rgba(255,255,0,0.9)',
     }
+    
 }
 function c(){
     var div = document.getElementById('controls')
@@ -209,7 +214,7 @@ function c(){
         div.style.display = 'none'
     }
 }
-//capiturar inputes
+//capiturar inputs
 window.addEventListener('keyup',(event)=>{
     keys[event.key] = false
 })
